@@ -1,5 +1,5 @@
 package Cards;
 
-public class Spells extends Card {
+public class Spells extends Card{
 
 }

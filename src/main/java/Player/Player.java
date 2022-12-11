@@ -1,5 +1,6 @@
 package Player;
 
+import Cards.Hero;
 import Deck.Deck;
 import Table.Mana;
 

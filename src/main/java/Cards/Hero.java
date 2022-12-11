@@ -1,6 +1,8 @@
-package Player;
+package Cards;
 
-public class Hero {
+import Cards.Propertys.Damaged;
+
+public class Hero implements Damaged {
     int currentHp;
     int buffHp;
     int startHp;

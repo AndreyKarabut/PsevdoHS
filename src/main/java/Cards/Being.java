@@ -1,6 +1,11 @@
 package Cards;
 
-public class Being extends Card{
+import Cards.Propertys.Damaged;
+import Cards.Propertys.TypeBeing;
+
+import java.util.ArrayList;
+
+public class Being extends Card implements Damaged {
 
     int currentHp;
     int buffHp;
@@ -11,6 +16,26 @@ public class Being extends Card{
     int currentAttack;
     int buffAttack;
     int startAttack;
+
+    ArrayList<TypeBeing> typeBeings;
+
+    //standart skills
+    boolean taunt;
+    boolean poison;
+    boolean divineShield;
+    boolean rush;
+    boolean charge;
+    boolean liveSteal;
+    boolean magnetic;
+    boolean windFury;
+    boolean targetedBySpell;
+    boolean targetedByHeroPowers;
+    boolean targetedByBeing;
+    int spellDamage;
+
+    public void battleCry(){}
+
+    public void deathRattle(){}
 
     public void setMaxHp(){
         this.maxHp = this.startHp + this.buffHp;
@@ -47,7 +72,6 @@ public class Being extends Card{
         }
     }
 
-
     public int getCurrentAttack() {
         return currentAttack;
     }
@@ -56,12 +80,7 @@ public class Being extends Card{
         this.currentAttack = currentAttack;
     }
 
-    public void dealDamageBeing(Being dealer, Being ricipient){
-        ricipient.setReceivedDamage(dealer.getCurrentAttack());
-        dealer.setReceivedDamage(ricipient.getCurrentAttack());
-    }
-
-    public boolean iAmDead(Being being){
+    public static boolean iAmDead(Being being){
         return being.currentHp < 1;
     }
 
